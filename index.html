@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selfie Live Stream Ad Creator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Selfie Live Stream Ad Creator</h1>
+      <p>Start your camera or upload a selfie, then type an advertising prompt in the bottom line.</p>
+    </header>
+
+    <section class="stage">
+      <video id="liveVideo" autoplay playsinline muted></video>
+      <canvas id="uploadCanvas" aria-label="Uploaded selfie preview"></canvas>
+      <p id="sourceLabel" class="badge">Source: none</p>
+    </section>
+
+    <section class="controls">
+      <button id="startCameraBtn">Start Live Stream</button>
+      <label class="uploadLabel" for="selfieUpload">Upload Selfie</label>
+      <input id="selfieUpload" type="file" accept="image/*" />
+      <button id="captureBtn">Capture Current Frame</button>
+      <button id="downloadBtn" disabled>Download Advertising Photo</button>
+    </section>
+
+    <section class="result">
+      <h2>Advertising Photo Preview</h2>
+      <canvas id="adCanvas" aria-label="Advertising photo output"></canvas>
+    </section>
+
+    <form id="promptForm" class="promptBar">
+      <input
+        id="adPrompt"
+        type="text"
+        placeholder="Type advertising prompt here (bottom line)..."
+        maxlength="120"
+        required
+      />
+      <button type="submit">Create Ad Photo</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
